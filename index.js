@@ -13,6 +13,7 @@ server.on('request', function (request, response) {
 
     } else {
         response.setHeader("Content-Type", "image/jpeg");
+        response.statusCode = 404;
         fs.readFile('./404.jpg', (err, jpg) => {
             response.write(jpg);
             response.end();
